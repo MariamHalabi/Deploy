@@ -1,0 +1,34 @@
+[
+  {
+    "marque": "Lay's",
+    "origine": "Nashville",
+    "taille": "XL",
+    "poids": 275,
+    "prix": 3.23,
+    "gout": "paprika"
+  },
+  {
+    "marque": "3D",
+    "origine": "France",
+    "taille": "L",
+    "poids": 150,
+    "prix": 1.55,
+    "gout": "nature"
+  },
+  {
+    "marque": "Pringles",
+    "origine": "Etats-Unis",
+    "taille": "S",
+    "poids": 40,
+    "prix": 1.22,
+    "gout": "sour cream"
+  },
+  {
+    "marque": "Brets",
+    "origine": "France",
+    "taille": "M",
+    "poids": 75,
+    "prix": 0.9,
+    "gout": "pizza"
+  }
+]
