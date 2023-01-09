@@ -8,9 +8,9 @@ $config = Setup::createYAMLMetadataConfiguration(array(__DIR__ . "/config/yaml")
 $conn = array(
 'host' => 'host',
 'driver' => 'pdo_pgsql',
-'user' => 'cnam_user',
-'password' => 'pass',
-'dbname' => 'cnam',
+'user' => '',
+'password' => '12345678',
+'dbname' => 'OnlineShop',
 'port' => '5432'
 );
 $entityManager = EntityManager::create($conn, $config);
