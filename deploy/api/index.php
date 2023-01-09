@@ -5,7 +5,6 @@ use Slim\Factory\AppFactory;
 use Firebase\JWT\JWT;
 
 require "client.php";
-require __DIR__ . '/../vendor/autoload.php';
 
 const JWT_SECRET = "makey1234567";
 
