@@ -34,14 +34,14 @@ COPY ./deploy/ /var/www/html
 
 WORKDIR /var/www/html
 
-#RUN composer update
+RUN composer update
 
-#RUN php vendor/bin/doctrine orm:convert-mapping --namespace="" --force --from-database yml ./config/yaml
+RUN php vendor/bin/doctrine orm:convert-mapping --namespace="" --force --from-database yml ./config/yaml
 
-#RUN ls -al
+RUN ls -al
 
 RUN mkdir ./src
 
-#RUN php vendor/bin/doctrine orm:generate-entities --generate-annotations=false --update-entities=true --generate-methods=false ./api/modeles
+ RUN php vendor/bin/doctrine orm:generate-entities --generate-annotations=false --update-entities=true --generate-methods=false ./api/modeles
 
  RUN composer update
