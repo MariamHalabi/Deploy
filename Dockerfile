@@ -30,7 +30,7 @@ RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
 RUN docker-php-ext-install pdo pdo_pgsql
 
-#COPY ./deploy/ /var/www/html
+COPY ./deploy/ /var/www/html
 
 WORKDIR /var/www/html
 
@@ -44,4 +44,4 @@ RUN mkdir ./src
 
 ## RUN php vendor/bin/doctrine orm:generate-entities --generate-annotations=false --update-entities=true --generate-methods=false ./api/modeles
 
- RUN composer update
+ #RUN composer update
