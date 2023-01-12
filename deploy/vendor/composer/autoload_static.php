@@ -75,6 +75,7 @@ class ComposerStaticInitc3c6c71925989f71ba53aa3907d8dc96
         array (
             'Nyholm\\Psr7\\' => 12,
             'Nyholm\\Psr7Server\\' => 18,
+            'Neomerx\\Cors\\' => 13,
         ),
         'L' => 
         array (
@@ -115,6 +116,7 @@ class ComposerStaticInitc3c6c71925989f71ba53aa3907d8dc96
         array (
             0 => __DIR__ . '/..' . '/tuupola/callable-handler/src',
             1 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
+            2 => __DIR__ . '/..' . '/tuupola/cors-middleware/src',
         ),
         'Tuupola\\Http\\Factory\\' => 
         array (
@@ -217,6 +219,10 @@ class ComposerStaticInitc3c6c71925989f71ba53aa3907d8dc96
         'Nyholm\\Psr7Server\\' => 
         array (
             0 => __DIR__ . '/..' . '/nyholm/psr7-server/src',
+        ),
+        'Neomerx\\Cors\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/neomerx/cors-psr7/src',
         ),
         'Laminas\\Diactoros\\' => 
         array (
