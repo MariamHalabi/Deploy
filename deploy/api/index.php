@@ -13,6 +13,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 
 const JWT_SECRET = "makey1234567";
+$app->addErrorMiddleware(true, true, true);
 
 $app = AppFactory::create();
 $app->setBasePath("https://tp05-halabi-mariam.onrender.com");
