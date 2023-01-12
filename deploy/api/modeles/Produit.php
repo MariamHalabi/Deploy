@@ -1,5 +1,5 @@
  <?php
- class Produit implements jsonSerialize{
+ class Produit implements \JsonSerializable{
   public int $id;
 public  string $name;
   public string $description;
