@@ -4,7 +4,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Firebase\JWT\JWT;
 
-require __DIR__."/modeles/Client.php";
+require __DIR__."/modeles/client.php";
 require __DIR__."/modeles/Produit.php";
 
 require __DIR__ . '/../../vendor/autoload.php';
@@ -35,7 +35,7 @@ $app->post('/api/login', function (Request $request, Response $response) {
     }
 
     // global $entityManager;
-    // $user = $entityManager->getRepository('Client')->findOneBy(array('login' => $login, 'password' => $password));
+    // $user = $entityManager->getRepository('client')->findOneBy(array('login' => $login, 'password' => $password));
     // $id = $user->getId();
 
     if (!$err && $user) {
@@ -135,7 +135,7 @@ $app->post('/api/inscription', function (Request $request, Response $response) {
 
     if (!$err) {
         global $entityManager;
-        $client = new Client;
+        $client = new client;
         $client->setLastname($lastName);
         $client->setFirstname($firstName);
         $client->setEmail($email);
@@ -198,8 +198,8 @@ $app->post('/api/catalogue', function (Request $request, Response $response, $ar
     return $response;
 });
 
-function createClientFromBody($body): Client {
-    $client = new Client();
+function createClientFromBody($body): client {
+    $client = new client();
     $client->firstname = $body['firstname'];
     $client->lastname = $body['lastname'];
     $client->email = $body['email'];
