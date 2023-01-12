@@ -17,8 +17,8 @@ const JWT_SECRET = "makey1234567";
 $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
 
-$app->setBasePath("https://tp05-halabi-mariam.onrender.com");
-$app->addBodyParsingMiddleware();
+// $app->setBasePath("https://tp05-halabi-mariam.onrender.com");
+// $app->addBodyParsingMiddleware();
 
 
 $app->post('/api/login', function (Request $request, Response $response) {
@@ -84,7 +84,7 @@ function  addHeaders (Response $response) : Response {
 
 $app->get('/api/catalogue', function (Request $request, Response $response) {
     global $entityManager;
-    $products = $entityManager->getRepository('product')->findAll();
+    $products = $entityManager->getRepository(Produit::class)->findAll();
     $response = addHeaders($response);
     $response->getBody()->write(json_encode ($products));
     return $response;

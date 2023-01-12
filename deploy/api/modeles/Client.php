@@ -1,4 +1,6 @@
 <?php
+use Doctrine\ORM\Mapping as ORM;
+
 class Client implements \JsonSerializable{
     public int $id;
     public string $login;
