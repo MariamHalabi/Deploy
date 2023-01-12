@@ -147,8 +147,8 @@ $app->post('/api/inscription', function (Request $request, Response $response) {
         $client->setLogin($login);
         $client->setPassword($password);
         $client->setCivility($civility);
-        $entityManager->persist($client);
-        $entityManager->flush();
+       // $entityManager->persist($client);
+       // $entityManager->flush();
         $response = addHeaders($response);
         $response->getBody()->write(json_encode ($client));
     }
