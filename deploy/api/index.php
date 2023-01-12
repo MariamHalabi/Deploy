@@ -4,6 +4,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Firebase\JWT\JWT;
 use Slim\Exception\NotFoundException;
+use Tuupola\Middleware\HttpBasicAuthentication;
 
 require __DIR__."/modeles/Client.php";
 require __DIR__."/modeles/Produit.php";
