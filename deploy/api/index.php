@@ -26,8 +26,8 @@ $app->post('/api/login', function (Request $request, Response $response) {
     $err=false;
     $inputJSON = file_get_contents('php://input');
     $body = json_decode( $inputJSON, TRUE );
-    $login = $body['login'] ?? "";
-    $password = $body['password'] ?? "";
+    $login = $body['username'] ?? "";
+    $password = $body['mdp'] ?? "";
 
     //check format login and password
     if (empty($login) || empty($password)|| !preg_match("/^[a-zA-Z0-9]+$/", $login) || !preg_match("/^[a-zA-Z0-9]+$/", $password)) {
@@ -119,17 +119,17 @@ $app->post('/api/inscription', function (Request $request, Response $response) {
      $inputJSON = file_get_contents('php://input');
     $body = json_decode( $inputJSON, TRUE );
 
-    $login = $body ['login'] ?? "";
-    $password = $body ['password'] ?? "";
-        $firstName = $body ['firstname'] ?? "";
-    $lastName = $body ['lastname'] ?? "";
+    $login = $body ['yourUserName'] ?? "";
+    $password = $body ['exampleInputPassword1'] ?? "";
+        $firstName = $body ['yourFirstName'] ?? "";
+    $lastName = $body ['yourName'] ?? "";
     $email = $body ['email'] ?? "";
-    $phone = $body ['phone'] ?? "";
-    $address = $body ['address'] ?? "";
-    $city = $body ['city'] ?? "";
-    $codecity = $body ['cp'] ?? "";
+    $phone = $body ['telnumber'] ?? "";
+    $address = $body ['yourAddresss'] ?? "";
+    $city = $body ['yourCity'] ?? "";
+    $codecity = $body ['codePostalChamps'] ?? "";
     $country = $body ['country'] ?? "";
-    $civility = $body ['civility'] ?? "";
+    $civility = $body ['civilite'] ?? "";
     $err=false;
 
 
