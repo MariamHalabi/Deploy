@@ -38,15 +38,15 @@ $app->post('/api/login', function (Request $request, Response $response) {
         $err=true;
     }
 
-    // global $entityManager;
-    // $user = $entityManager->getRepository('Client')->findOneBy(array('login' => $login, 'password' => $password));
-    // $id = $user->getId();
+     global $entityManager;
+     $user = $entityManager->getRepository('Client')->findOneBy(array('login' => $login, 'password' => $password));
+     $id = $user->getId();
 
-    if (!$err /*&& $user*/) {
-        $response = createJwT( $login, $password);
-       // $response = addHeaders($response);
-        //$data = array('login' => $login, 'id' => $id);
-       // $response->getBody()->write(json_encode($data));
+    if (!$err && $user) {
+        $response = createJwT( $login, $password,$response);
+        $response = addHeaders($response);
+        $data = array('login' => $login, 'id' => $id);
+        $response->getBody()->write(json_encode($data));
     }
     else{
         $response = $response->withStatus(401);
@@ -88,18 +88,8 @@ $app->get('/api/catalogue', function (Request $request, Response $response) {
     return $response;
 });
 
-/*function getProductsJSON() {
-    return file_get_contents(__DIR__ . '\mock\catalogueMock.json');
-}
-*/
-$app->get('/api/product/{id}', function (Request $request, Response $response, $args) {
-   /* $id = $args ['id'];
-    $json = getProductsJSON();
-    $products = json_decode($json, true);
 
-    $product = filterArrayById($products, $id);
-    $response->getBody()->write(json_encode($product));
-    return $response;*/
+$app->get('/api/product/{id}', function (Request $request, Response $response, $args) {
 
  global $entityManager;
     $product = $entityManager->getRepository('Produit')->findOneBy(array('id' => $args['id']));
@@ -151,8 +141,8 @@ $app->post('/api/inscription', function (Request $request, Response $response) {
         $client->setLogin($login);
         $client->setPassword($password);
         $client->setCivility($civility);
-       // $entityManager->persist($client);
-       // $entityManager->flush();
+        $entityManager->persist($client);
+        $entityManager->flush();
         $response = addHeaders($response);
         $response->getBody()->write(json_encode ($client));
     }
