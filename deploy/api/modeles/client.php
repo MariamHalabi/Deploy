@@ -1,5 +1,5 @@
 <?php
-class Client {
+class Client implements jsonSerialize{
     public int $id;
     public string $login;
     public string $password;
@@ -60,5 +60,16 @@ class Client {
     public function setCountry($country)
     {
         $this->country = $country;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value of any type other than a resource .
+     */
+    public function jsonSerialize() {
+        $vars = get_object_vars($this);
+        unset($vars['password']);
+        return $vars;
     }
 }
