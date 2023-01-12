@@ -7,7 +7,7 @@ use Firebase\JWT\JWT;
 require __DIR__."/modeles/Client.php";
 require __DIR__."/modeles/Produit.php";
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 const JWT_SECRET = "makey1234567";
 
