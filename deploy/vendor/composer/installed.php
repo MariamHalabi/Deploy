@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd14071209a11c1040c145c2d6f8ef472c07c6f5d',
+        'reference' => 'ff36351bc153787a2dddafc093b7911b8f94c9ee',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd14071209a11c1040c145c2d6f8ef472c07c6f5d',
+            'reference' => 'ff36351bc153787a2dddafc093b7911b8f94c9ee',
             'dev_requirement' => false,
         ),
         'doctrine/cache' => array(
@@ -309,6 +309,15 @@
             'install_path' => __DIR__ . '/../ralouphie/getallheaders',
             'aliases' => array(),
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
+            'dev_requirement' => false,
+        ),
+        'selective/basepath' => array(
+            'pretty_version' => '2.1.0',
+            'version' => '2.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../selective/basepath',
+            'aliases' => array(),
+            'reference' => '63961fbfcaf492bd0ae8e40653f6c3c750c2f8ad',
             'dev_requirement' => false,
         ),
         'slim/http' => array(

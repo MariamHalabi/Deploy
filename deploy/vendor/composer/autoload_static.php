@@ -62,6 +62,7 @@ class ComposerStaticInitc3c6c71925989f71ba53aa3907d8dc96
             'Slim\\Psr7\\' => 10,
             'Slim\\Http\\' => 10,
             'Slim\\' => 5,
+            'Selective\\BasePath\\' => 19,
         ),
         'P' => 
         array (
@@ -115,8 +116,8 @@ class ComposerStaticInitc3c6c71925989f71ba53aa3907d8dc96
         'Tuupola\\Middleware\\' => 
         array (
             0 => __DIR__ . '/..' . '/tuupola/callable-handler/src',
-            1 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
-            2 => __DIR__ . '/..' . '/tuupola/cors-middleware/src',
+            1 => __DIR__ . '/..' . '/tuupola/cors-middleware/src',
+            2 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
         ),
         'Tuupola\\Http\\Factory\\' => 
         array (
@@ -189,6 +190,10 @@ class ComposerStaticInitc3c6c71925989f71ba53aa3907d8dc96
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Selective\\BasePath\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/selective/basepath/src',
         ),
         'Psr\\Log\\' => 
         array (
