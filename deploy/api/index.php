@@ -215,7 +215,7 @@ $app->put('/api/product/{id}', function (Request $request, Response $response, $
 
     //check format name, price, description and image
     if (empty($name) || empty($price) || empty($description) || empty($image) ||
-    !preg_match("/^[a-zA-Z0-9]+$/", $name)  || !preg_match("/^[a-zA-Z0-9]+$/", $description) ||
+    !preg_match("/^[a-zA-Z0-9]+$/", $name)  || !preg_match("/^[a-zA-Z0-9]+$/", $description)
     ) {
         $err=true;
     }
