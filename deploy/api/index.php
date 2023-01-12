@@ -4,8 +4,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Firebase\JWT\JWT;
 
-require "/modeles/Client.php";
-require "/modeles/Produit.php";
+require __DIR__."/modeles/Client.php";
+require __DIR__."/modeles/Produit.php";
 
 require __DIR__ . '/../../vendor/autoload.php';
 
