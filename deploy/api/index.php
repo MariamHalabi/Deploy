@@ -38,11 +38,11 @@ $app->post('/api/login', function (Request $request, Response $response) {
     // $user = $entityManager->getRepository('Client')->findOneBy(array('login' => $login, 'password' => $password));
     // $id = $user->getId();
 
-    if (!$err && $user) {
+    if (!$err /*&& $user*/) {
         $response = createJwT($response, $login, $password);
         $response = addHeaders($response);
-        $data = array('login' => $login, 'id' => $id);
-        $response->getBody()->write(json_encode($data));
+        //$data = array('login' => $login, 'id' => $id);
+       // $response->getBody()->write(json_encode($data));
     }
     else{
         $response = $response->withStatus(401);
