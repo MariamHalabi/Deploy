@@ -1,5 +1,5 @@
 <?php
-class Client implements jsonSerialize{
+class client implements jsonSerialize{
     public int $id;
     public string $login;
     public string $password;
