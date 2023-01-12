@@ -15,6 +15,7 @@ require __DIR__ . '/vendor/autoload.php';
 const JWT_SECRET = "makey1234567";
 
 $app = AppFactory::create();
+$app->setBasePath("https://tp05-halabi-mariam.onrender.com");
 $app->addBodyParsingMiddleware();
 
 
