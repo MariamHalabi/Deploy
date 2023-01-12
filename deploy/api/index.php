@@ -32,9 +32,9 @@ $app->post('/api/login', function (Request $request, Response $response) {
         $err=true;
     }
 
-    global $entityManager;
-    $user = $entityManager->getRepository('Client')->findOneBy(array('login' => $login, 'password' => $password));
-    $id = $user->getId();
+    // global $entityManager;
+    // $user = $entityManager->getRepository('Client')->findOneBy(array('login' => $login, 'password' => $password));
+    // $id = $user->getId();
 
     if (!$err && $user) {
         $response = createJwT($response, $login, $password);
@@ -248,7 +248,7 @@ $options = [
     "algorithm" => ["HS256"],
     "secret" => JWT_SECRET,
     "path" => ["/api"],
-    "ignore" => ["/api/login", "/api/inscription"],
+    "ignore" => ["/api/login", "/api/inscription", "/api/catalogue"],
     "error" => function ($response) {
         $data = array('ERREUR' => 'Connexion', 'ERREUR' => 'JWT Non valide');
         $response = $response->withStatus(401);
