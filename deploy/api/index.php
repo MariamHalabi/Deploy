@@ -30,8 +30,8 @@ $app->post('/api/login', function (Request $request, Response $response) {
     $err=false;
     $inputJSON = file_get_contents('php://input');
     $body = json_decode( $inputJSON, TRUE );
-    $login = $body['login'] ?? "";
-    $password = $body['password'] ?? "";
+    $login = $body['username'] ?? "";
+    $password = $body['mdp'] ?? "";
 
     //check format login and password
     if (empty($login) || empty($password)) {
@@ -43,8 +43,8 @@ $app->post('/api/login', function (Request $request, Response $response) {
     // $id = $user->getId();
 
     if (!$err /*&& $user*/) {
-        $response = createJwT($response, $login, $password);
-        $response = addHeaders($response);
+        $response = createJwT( $login, $password);
+       // $response = addHeaders($response);
         //$data = array('login' => $login, 'id' => $id);
        // $response->getBody()->write(json_encode($data));
     }
