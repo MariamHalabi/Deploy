@@ -3,6 +3,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Firebase\JWT\JWT;
+use Slim\Exception\NotFoundException;
 
 require __DIR__."/modeles/Client.php";
 require __DIR__."/modeles/Produit.php";
@@ -28,11 +29,11 @@ $app->post('/api/login', function (Request $request, Response $response) {
     $err=false;
     $inputJSON = file_get_contents('php://input');
     $body = json_decode( $inputJSON, TRUE );
-    $login = $body['username'] ?? "";
-    $password = $body['mdp'] ?? "";
+    $login = $body['login'] ?? "";
+    $password = $body['password'] ?? "";
 
     //check format login and password
-    if (empty($login) || empty($password)|| !preg_match("/^[a-zA-Z0-9]+$/", $login) || !preg_match("/^[a-zA-Z0-9]+$/", $password)) {
+    if (empty($login) || empty($password)) {
         $err=true;
     }
 
